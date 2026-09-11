@@ -37,17 +37,52 @@ public class WarbornArmorRenderer extends GeoArmorRenderer<WarbornArmorItem> {
     }
 
     @Override
-    public void actuallyRender(com.mojang.blaze3d.vertex.PoseStack poseStack, WarbornArmorItem animatable, software.bernie.geckolib.cache.object.BakedGeoModel model,
-            net.minecraft.client.renderer.RenderType renderType, net.minecraft.client.renderer.MultiBufferSource bufferSource, com.mojang.blaze3d.vertex.VertexConsumer buffer,
-            boolean isReRender, float partialTick, int packedLight, int packedOverlay,
-            int colour) {
-        ItemStack stack = this.currentStack;
-        if (stack != null && ru.liko.warbornrenewed.platform.Services.ITEM_DATA.hasArmorColor(stack)) {
-            int customColor = ru.liko.warbornrenewed.platform.Services.ITEM_DATA.getArmorColor(stack);
-            int alpha = colour & 0xFF000000;
-            colour = alpha | (customColor & 0x00FFFFFF);
-        }
-        super.actuallyRender(poseStack, animatable, model, renderType, bufferSource, buffer, isReRender, partialTick,
-                packedLight, packedOverlay, colour);
+public void actuallyRender(
+        com.mojang.blaze3d.vertex.PoseStack poseStack,
+        WarbornArmorItem animatable,
+        software.bernie.geckolib.cache.object.BakedGeoModel model,
+        RenderType renderType,
+        MultiBufferSource bufferSource,
+        com.mojang.blaze3d.vertex.VertexConsumer buffer,
+        boolean isReRender,
+        float partialTick,
+        int packedLight,
+        int packedOverlay,
+        int colour) {
+
+    ItemStack stack = this.currentStack;
+
+    if (stack != null && animatable.isDyeable()) {
+        int dyeColor = net.minecraft.world.item.component.DyedItemColor.getOrDefault(
+                stack,
+                net.minecraft.world.item.component.DyedItemColor.LEATHER_COLOR
+        );
+
+        // Minecraft colors are 0xRRGGBB
+        float red = ((dyeColor >> 16) & 0xFF) / 255.0F;
+        float green = ((dyeColor >> 8) & 0xFF) / 255.0F;
+        float blue = (dyeColor & 0xFF) / 255.0F;
+
+        // GeckoLib expects ARGB
+        colour =
+                (0xFF << 24) |
+                ((int)(red * 255) << 16) |
+                ((int)(green * 255) << 8) |
+                (int)(blue * 255);
     }
+
+    super.actuallyRender(
+            poseStack,
+            animatable,
+            model,
+            renderType,
+            bufferSource,
+            buffer,
+            isReRender,
+            partialTick,
+            packedLight,
+            packedOverlay,
+            colour
+    );
+}
 }

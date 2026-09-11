@@ -38,7 +38,7 @@ public class DyeArmorRecipe extends CustomRecipe {
         for (int i = 0; i < input.size(); i++) {
             ItemStack stack = input.getItem(i);
             if (!stack.isEmpty()) {
-                if (stack.getItem() instanceof WarbornArmorItem) {
+                if (stack.getItem() instanceof WarbornArmorItem armorItem && armorItem.isDyeable()) {
                     if (!armor.isEmpty()) {
                         return false; // Only one armor piece allowed
                     }
@@ -80,7 +80,7 @@ public class DyeArmorRecipe extends CustomRecipe {
                     }
                 } else if (stack.getItem() instanceof DyeItem dyeItem) {
                     DyeColor dyeColor = dyeItem.getDyeColor();
-                    int color = dyeColor.getTextColor();
+                    int color = dyeColor.getTextureDiffuseColor();
                     int r = (color >> 16) & 0xFF;
                     int g = (color >> 8) & 0xFF;
                     int b = color & 0xFF;
@@ -112,7 +112,7 @@ public class DyeArmorRecipe extends CustomRecipe {
         for (int i = 0; i < input.size(); i++) {
             ItemStack stack = input.getItem(i);
             if (!stack.isEmpty() && stack.getItem() instanceof DyeItem dyeItem) {
-                int color = dyeItem.getDyeColor().getTextColor();
+                int color = dyeItem.getDyeColor().getTextureDiffuseColor();
                 int r = (color >> 16) & 0xFF;
                 int g = (color >> 8) & 0xFF;
                 int b = color & 0xFF;

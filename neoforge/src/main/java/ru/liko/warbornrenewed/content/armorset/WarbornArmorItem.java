@@ -35,6 +35,7 @@ import software.bernie.geckolib.animation.PlayState;
 import software.bernie.geckolib.animation.RawAnimation;
 import software.bernie.geckolib.constant.DataTickets;
 import software.bernie.geckolib.util.GeckoLibUtil;
+import net.minecraft.world.item.component.DyedItemColor;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -97,22 +98,56 @@ public class WarbornArmorItem extends ArmorItem implements GeoItem {
         return Holder.direct(SoundEvents.EMPTY);
     }
 
-    @Override
-    public void initializeClient(Consumer<IClientItemExtensions> consumer) {
-        consumer.accept(new IClientItemExtensions() {
-            private WarbornArmorRenderer renderer;
-
-            @Override
-            public HumanoidModel<?> getHumanoidArmorModel(LivingEntity livingEntity, ItemStack stack,
-                    EquipmentSlot slot, HumanoidModel<?> defaultModel) {
-                if (renderer == null) {
-                    renderer = new WarbornArmorRenderer(visuals, bones);
-                }
-                renderer.prepForRender(livingEntity, stack, slot, defaultModel);
-                return renderer;
-            }
-        });
+    public int getDyeColor(ItemStack stack) {
+    if (!dyeable) {
+        return 0xFFFFFFFF;
     }
+
+    return DyedItemColor.getOrDefault(
+            stack,
+            DyedItemColor.LEATHER_COLOR
+    );
+}
+
+    @Override
+public void initializeClient(Consumer<IClientItemExtensions> consumer) {
+    consumer.accept(new IClientItemExtensions() {
+        private WarbornArmorRenderer renderer;
+
+        @Override
+        public HumanoidModel<?> getHumanoidArmorModel(
+                LivingEntity livingEntity,
+                ItemStack stack,
+                EquipmentSlot slot,
+                HumanoidModel<?> defaultModel) {
+
+            if (renderer == null) {
+                renderer = new WarbornArmorRenderer(visuals, bones);
+            }
+
+            renderer.prepForRender(
+                    livingEntity,
+                    stack,
+                    slot,
+                    defaultModel
+            );
+
+            return renderer;
+        }
+
+        @Override
+        public int getDefaultDyeColor(ItemStack stack) {
+            if (!dyeable) {
+                return 0xFFFFFFFF;
+            }
+
+            return DyedItemColor.getOrDefault(
+                    stack,
+                    DyedItemColor.LEATHER_COLOR
+            ) | 0xFF000000;
+        }
+    });
+}
 
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {

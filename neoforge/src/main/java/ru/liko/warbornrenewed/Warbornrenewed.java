@@ -38,6 +38,7 @@ public class Warbornrenewed {
         ModItems.register(modEventBus);
         ModSoundEvents.register(modEventBus);
         ModCreativeTabs.register(modEventBus);
+        ModRecipes.RECIPE_SERIALIZERS.register(modEventBus);
         ArmorAnvilRepairHandler.register();
 
         // Register network
