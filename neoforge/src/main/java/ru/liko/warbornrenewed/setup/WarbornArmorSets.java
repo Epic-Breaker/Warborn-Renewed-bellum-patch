@@ -5,6 +5,7 @@ import ru.liko.warbornrenewed.content.armorset.ArmorAttributeSpec;
 import ru.liko.warbornrenewed.content.armorset.WarbornArmorRegistry;
 import ru.liko.warbornrenewed.content.armorset.WarbornArmorSet;
 import ru.liko.warbornrenewed.registry.ModArmorMaterials;
+import ru.liko.warbornrenewed.content.armorset.WarbornArmorItem;
 
 /**
  * ========================================
@@ -126,7 +127,6 @@ public class WarbornArmorSets {
                         .helmet(piece -> piece
                                 .registryName("opscore-standard")
                                 .material(type -> ModArmorMaterials.KEVLAR)
-                                .durability()
                                 .visuals(spec -> spec
                                         .model("warbornrenewed:geo/opscore.geo.json")
                                         .texture("warbornrenewed:textures/opscore/opscore.png"))
@@ -139,7 +139,6 @@ public class WarbornArmorSets {
                         .helmet(piece -> piece
                                 .registryName("opscore-atacsfg")
                                 .material(type -> ModArmorMaterials.KEVLAR)
-                                .durability()
                                 .visuals(spec -> spec
                                         .model("warbornrenewed:geo/opscore.geo.json")
                                         .texture("warbornrenewed:textures/opscore/opscore-atacsfg.png"))
@@ -152,7 +151,6 @@ public class WarbornArmorSets {
                         .helmet(piece -> piece
                                 .registryName("opscore-black")
                                 .material(type -> ModArmorMaterials.KEVLAR)
-                                .durability()
                                 .visuals(spec -> spec
                                         .model("warbornrenewed:geo/opscore.geo.json")
                                         .texture("warbornrenewed:textures/opscore/opscore-black.png"))
@@ -165,7 +163,6 @@ public class WarbornArmorSets {
                         .helmet(piece -> piece
                                 .registryName("opscore-desert")
                                 .material(type -> ModArmorMaterials.KEVLAR)
-                                .durability()
                                 .visuals(spec -> spec
                                         .model("warbornrenewed:geo/opscore.geo.json")
                                         .texture("warbornrenewed:textures/opscore/opscore-desert.png"))
@@ -178,7 +175,6 @@ public class WarbornArmorSets {
                         .helmet(piece -> piece
                                 .registryName("opscore-emr")
                                 .material(type -> ModArmorMaterials.KEVLAR)
-                                .durability()
                                 .visuals(spec -> spec
                                         .model("warbornrenewed:geo/opscore.geo.json")
                                         .texture("warbornrenewed:textures/opscore/opscore-emr.png"))
@@ -191,7 +187,6 @@ public class WarbornArmorSets {
                         .helmet(piece -> piece
                                 .registryName("opscore-green")
                                 .material(type -> ModArmorMaterials.KEVLAR)
-                                .durability()
                                 .visuals(spec -> spec
                                         .model("warbornrenewed:geo/opscore.geo.json")
                                         .texture("warbornrenewed:textures/opscore/opscore-green.png"))
@@ -204,7 +199,6 @@ public class WarbornArmorSets {
                         .helmet(piece -> piece
                                 .registryName("opscore-mm14")
                                 .material(type -> ModArmorMaterials.KEVLAR)
-                                .durability()
                                 .visuals(spec -> spec
                                         .model("warbornrenewed:geo/opscore.geo.json")
                                         .texture("warbornrenewed:textures/opscore/opscore-mm14.png"))
@@ -217,7 +211,6 @@ public class WarbornArmorSets {
                         .helmet(piece -> piece
                                 .registryName("opscore-multicam")
                                 .material(type -> ModArmorMaterials.KEVLAR)
-                                .durability()
                                 .visuals(spec -> spec
                                         .model("warbornrenewed:geo/opscore.geo.json")
                                         .texture("warbornrenewed:textures/opscore/opscore-multicam.png"))
@@ -230,7 +223,6 @@ public class WarbornArmorSets {
                         .helmet(piece -> piece
                                 .registryName("opscore-white")
                                 .material(type -> ModArmorMaterials.KEVLAR)
-                                .durability()
                                 .visuals(spec -> spec
                                         .model("warbornrenewed:geo/opscore.geo.json")
                                         .texture("warbornrenewed:textures/opscore/opscore-white.png"))
@@ -252,7 +244,6 @@ public class WarbornArmorSets {
                         .helmet(piece -> piece
                                 .registryName("panama-atacsfg")
                                 .material(type -> ModArmorMaterials.LEATHER)
-                                .durability()
                                 .visuals(spec -> spec
                                         .model("warbornrenewed:geo/panama.geo.json")
                                         .texture("warbornrenewed:textures/panama/panama-atacsfg.png"))
@@ -264,7 +255,6 @@ public class WarbornArmorSets {
                         .helmet(piece -> piece
                                 .registryName("panama-desert")
                                 .material(type -> ModArmorMaterials.LEATHER)
-                                .durability()
                                 .visuals(spec -> spec
                                         .model("warbornrenewed:geo/panama.geo.json")
                                         .texture("warbornrenewed:textures/panama/panama-desert.png"))
@@ -276,7 +266,6 @@ public class WarbornArmorSets {
                         .helmet(piece -> piece
                                 .registryName("panama-emr")
                                 .material(type -> ModArmorMaterials.LEATHER)
-                                .durability()
                                 .visuals(spec -> spec
                                         .model("warbornrenewed:geo/panama.geo.json")
                                         .texture("warbornrenewed:textures/panama/panama-emr.png"))
@@ -288,7 +277,6 @@ public class WarbornArmorSets {
                         .helmet(piece -> piece
                                 .registryName("panama-green")
                                 .material(type -> ModArmorMaterials.LEATHER)
-                                .durability()
                                 .visuals(spec -> spec
                                         .model("warbornrenewed:geo/panama.geo.json")
                                         .texture("warbornrenewed:textures/panama/panama-green.png"))
@@ -300,7 +288,6 @@ public class WarbornArmorSets {
                         .helmet(piece -> piece
                                 .registryName("panama-multicam")
                                 .material(type -> ModArmorMaterials.LEATHER)
-                                .durability()
                                 .visuals(spec -> spec
                                         .model("warbornrenewed:geo/panama.geo.json")
                                         .texture("warbornrenewed:textures/panama/panama-multicam.png"))
@@ -312,7 +299,6 @@ public class WarbornArmorSets {
                         .helmet(piece -> piece
                                 .registryName("panama-ucp")
                                 .material(type -> ModArmorMaterials.LEATHER)
-                                .durability()
                                 .visuals(spec -> spec
                                         .model("warbornrenewed:geo/panama.geo.json")
                                         .texture("warbornrenewed:textures/panama/panama-ucp.png"))
@@ -324,7 +310,6 @@ public class WarbornArmorSets {
                         .helmet(piece -> piece
                                 .registryName("panama-white")
                                 .material(type -> ModArmorMaterials.LEATHER)
-                                .durability()
                                 .visuals(spec -> spec
                                         .model("warbornrenewed:geo/panama.geo.json")
                                         .texture("warbornrenewed:textures/panama/panama-white.png"))
@@ -483,7 +468,6 @@ public class WarbornArmorSets {
                         .chestplate(piece -> piece
                                 .registryName("iotv-black")
                                 .material(type -> ModArmorMaterials.CERAMIC)
-                                .durability()
                                 .visuals(spec -> spec
                                         .model("warbornrenewed:geo/iotv.geo.json")
                                         .texture("warbornrenewed:textures/iotv/iotv-black.png"))
@@ -498,7 +482,6 @@ public class WarbornArmorSets {
                         .chestplate(piece -> piece
                                 .registryName("iotv-desert")
                                 .material(type -> ModArmorMaterials.CERAMIC)
-                                .durability()
                                 .visuals(spec -> spec
                                         .model("warbornrenewed:geo/iotv.geo.json")
                                         .texture("warbornrenewed:textures/iotv/iotv-desert.png"))
@@ -513,7 +496,6 @@ public class WarbornArmorSets {
                         .chestplate(piece -> piece
                                 .registryName("iotv-green")
                                 .material(type -> ModArmorMaterials.CERAMIC)
-                                .durability()
                                 .visuals(spec -> spec
                                         .model("warbornrenewed:geo/iotv.geo.json")
                                         .texture("warbornrenewed:textures/iotv/iotv-green.png"))
@@ -528,7 +510,6 @@ public class WarbornArmorSets {
                         .chestplate(piece -> piece
                                 .registryName("iotv-multicam")
                                 .material(type -> ModArmorMaterials.CERAMIC)
-                                .durability()
                                 .visuals(spec -> spec
                                         .model("warbornrenewed:geo/iotv.geo.json")
                                         .texture("warbornrenewed:textures/iotv/iotv-multicam.png"))
@@ -543,7 +524,6 @@ public class WarbornArmorSets {
                         .chestplate(piece -> piece
                                 .registryName("iotv-ucp")
                                 .material(type -> ModArmorMaterials.CERAMIC)
-                                .durability()
                                 .visuals(spec -> spec
                                         .model("warbornrenewed:geo/iotv.geo.json")
                                         .texture("warbornrenewed:textures/iotv/iotv-ucp.png"))
@@ -558,7 +538,6 @@ public class WarbornArmorSets {
                         .chestplate(piece -> piece
                                 .registryName("iotv-white")
                                 .material(type -> ModArmorMaterials.CERAMIC)
-                                .durability()
                                 .visuals(spec -> spec
                                         .model("warbornrenewed:geo/iotv.geo.json")
                                         .texture("warbornrenewed:textures/iotv/iotv-white.png"))
@@ -974,8 +953,8 @@ public class WarbornArmorSets {
                         .chestplate(piece -> piece
                                 .registryName("arm_bandage")
                                 .material(type -> ModArmorMaterials.LEATHER)
-                                .dyable(true)
-                                .visuals(spec -> spec
+                                .dyeable(true)
+                               .visuals(spec -> spec
                                         .model("warbornrenewed:geo/bandage_arm.geo.json")
                                         .texture("warbornrenewed:textures/bandage.png"))
                                 .bones(bones -> bones
@@ -986,7 +965,7 @@ public class WarbornArmorSets {
                         .leggings(piece -> piece
                                 .registryName("leg_bandage")
                                 .material(type -> ModArmorMaterials.LEATHER)
-                                .dyable(true)
+                                .dyeable(true)
                                 .visuals(spec -> spec
                                         .model("warbornrenewed:geo/leg_bandage.geo.json")
                                         .texture("warbornrenewed:textures/bandage.png"))

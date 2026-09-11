@@ -1,0 +1,6 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "warbornrenewed:item/ballistic_ceramic_repair_plate"
+    }
+}

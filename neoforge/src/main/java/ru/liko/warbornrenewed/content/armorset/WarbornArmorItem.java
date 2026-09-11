@@ -330,7 +330,7 @@ public class WarbornArmorItem extends ArmorItem implements GeoItem {
     @Override
     public boolean isDamageable(ItemStack stack) {
         // Check config to determine if armor should be damageable
-         return WarbornConfig.COMMON.armorIsDamageable.get();
+        return WarbornConfig.COMMON.armorIsDamageable.get();
     }
 
     public boolean isDyeable() {

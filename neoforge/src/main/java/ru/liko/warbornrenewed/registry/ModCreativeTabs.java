@@ -26,6 +26,10 @@ public final class ModCreativeTabs {
                         ModItems.armorPieces().forEach(entry -> output.accept(entry.get().getDefaultInstance()));
                         // Добавляем бинокль
                         output.accept(ModItems.BINOCULAR.get().getDefaultInstance());
+                        output.accept(ModItems.BALLISTIC_STEEL_REPAIR_PLATE.get().getDefaultInstance());
+                        output.accept(ModItems.BALLISTIC_CERAMIC_REPAIR_PLATE.get().getDefaultInstance());
+                        output.accept(ModItems.BALLISTIC_COMPOSITE_REPAIR_PLATE.get().getDefaultInstance());
+                        output.accept(ModItems.KEVLAR_REPAIR_PATCH.get().getDefaultInstance());
                         // Добавляем рюкзаки РЭБ
                         ModItems.rebBackpacks().forEach(entry -> output.accept(entry.get().getDefaultInstance()));
                     })

@@ -38,10 +38,7 @@ public class DyeArmorRecipe extends CustomRecipe {
         for (int i = 0; i < input.size(); i++) {
             ItemStack stack = input.getItem(i);
             if (!stack.isEmpty()) {
-                if (stack.getItem() instanceof WarbornArmorItem armorItem) {
-                    if (!armorItem.isDyeable()) {
-                        return false;
-                    }
+                if (stack.getItem() instanceof WarbornArmorItem) {
                     if (!armor.isEmpty()) {
                         return false; // Only one armor piece allowed
                     }
@@ -69,9 +66,6 @@ public class DyeArmorRecipe extends CustomRecipe {
             ItemStack stack = input.getItem(i);
             if (!stack.isEmpty()) {
                 if (stack.getItem() instanceof WarbornArmorItem armorItem) {
-                    if (!armorItem.isDyeable()) {
-                        return ItemStack.EMPTY;
-                    }
                     armor = stack.copy();
                     armor.setCount(1);
                     if (ru.liko.warbornrenewed.platform.Services.ITEM_DATA.hasArmorColor(armor)) {
