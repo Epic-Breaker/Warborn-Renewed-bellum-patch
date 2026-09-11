@@ -8,6 +8,7 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import org.slf4j.Logger;
 import ru.liko.warbornrenewed.config.WarbornConfig;
+import ru.liko.warbornrenewed.content.recipe.ArmorAnvilRepairHandler;
 import ru.liko.warbornrenewed.network.NetworkHandler;
 import ru.liko.warbornrenewed.registry.ModArmorMaterials;
 import ru.liko.warbornrenewed.registry.ModAttributes;
@@ -37,7 +38,7 @@ public class Warbornrenewed {
         ModItems.register(modEventBus);
         ModSoundEvents.register(modEventBus);
         ModCreativeTabs.register(modEventBus);
-        ModRecipes.RECIPE_SERIALIZERS.register(modEventBus);
+        ArmorAnvilRepairHandler.register();
 
         // Register network
         NetworkHandler.register(modEventBus);

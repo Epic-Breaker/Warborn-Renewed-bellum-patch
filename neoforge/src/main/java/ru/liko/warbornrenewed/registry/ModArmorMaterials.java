@@ -60,7 +60,7 @@ public class ModArmorMaterials {
             SoundEvents.ARMOR_EQUIP_LEATHER,
             0.5F,
             0.0F,
-            () -> Ingredient.EMPTY);
+            () -> Ingredient.of(ModItems.KEVLAR_REPAIR_PATCH.get()));
 
     /**
      * КЕРАМИКА (CERAMIC) - NIJ Level III
@@ -75,7 +75,7 @@ public class ModArmorMaterials {
             SoundEvents.ARMOR_EQUIP_IRON,
             2.5F,
             0.05F,
-            () -> Ingredient.EMPTY);
+            () -> Ingredient.of(ModItems.BALLISTIC_CERAMIC_REPAIR_PLATE.get()));
 
     /**
      * СТАЛЬ AR500 - NIJ Level III
@@ -90,7 +90,7 @@ public class ModArmorMaterials {
             SoundEvents.ARMOR_EQUIP_IRON,
             2.0F,
             0.1F,
-            () -> Ingredient.EMPTY);
+            () -> Ingredient.of(ModItems.BALLISTIC_STEEL_REPAIR_PLATE.get()));
 
     /**
      * ПОЛИЭТИЛЕН UHMWPE - NIJ Level III/IV
@@ -105,7 +105,7 @@ public class ModArmorMaterials {
             SoundEvents.ARMOR_EQUIP_NETHERITE,
             3.0F,
             0.08F,
-            () -> Ingredient.EMPTY);
+            () -> Ingredient.of(ModItems.BALLISTIC_COMPOSITE_REPAIR_PLATE.get()));
 
     /**
      * КОМПОЗИТ (COMPOSITE) - NIJ Level IV
@@ -120,7 +120,7 @@ public class ModArmorMaterials {
             SoundEvents.ARMOR_EQUIP_NETHERITE,
             4.0F,
             0.15F,
-            () -> Ingredient.EMPTY);
+            () -> Ingredient.of(ModItems.BALLISTIC_COMPOSITE_REPAIR_PLATE.get()));
 
     /**
      * ТИТАН (TITANIUM) - NIJ Level III+
