@@ -24,7 +24,7 @@ public class WarbornArmorSets {
         register6B47Helmets();      // Российский шлем 6Б47
         registerOpscoreHelmets();   // Ops-Core шлемы
         registerPanamaHelmets();    // Панамы
-        registerPASTGTHelmets();    // PASGT шлемы
+        registerPASGTHelmets();    // PASGT шлемы
         
         // ==================== БРОНЕЖИЛЕТЫ ====================
         register6B45Vests();        // Российский бронежилет 6Б45

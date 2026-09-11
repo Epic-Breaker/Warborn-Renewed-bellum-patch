@@ -1,5 +1,7 @@
 package ru.liko.warbornrenewed.client;
 
+import org.jetbrains.annotations.Nullable;
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.entity.player.Player;
 import net.neoforged.api.distmarker.Dist;
@@ -8,7 +10,6 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.CalculatePlayerTurnEvent;
 import net.neoforged.neoforge.client.event.ComputeFovModifierEvent;
-import org.jetbrains.annotations.Nullable;
 import ru.liko.warbornrenewed.Warbornrenewed;
 import ru.liko.warbornrenewed.content.item.BinocularItem;
 

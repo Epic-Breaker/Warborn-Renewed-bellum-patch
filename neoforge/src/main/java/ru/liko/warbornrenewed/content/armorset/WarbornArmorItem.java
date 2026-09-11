@@ -58,6 +58,7 @@ public class WarbornArmorItem extends ArmorItem implements GeoItem {
     private final ArmorVisualSpec visuals;
     private final ArmorBonesSpec bones;
     private final List<ArmorAttributeSpec> attributes;
+    private final boolean dyeable;
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 
     // Vision capabilities for this armor piece (stores capability tags like "nvg",
@@ -65,12 +66,13 @@ public class WarbornArmorItem extends ArmorItem implements GeoItem {
     private final List<String> visionCapabilities = new ArrayList<>();
 
     public WarbornArmorItem(String itemId, Holder<ArmorMaterial> material, Type type, Properties properties,
-            ArmorVisualSpec visuals, ArmorBonesSpec bones, List<ArmorAttributeSpec> attributes) {
+            ArmorVisualSpec visuals, ArmorBonesSpec bones, List<ArmorAttributeSpec> attributes, boolean dyeable) {
         super(material, type, properties);
         this.itemId = Objects.requireNonNull(itemId, "itemId");
         this.visuals = Objects.requireNonNull(visuals, "visuals");
         this.bones = Objects.requireNonNull(bones, "bones");
         this.attributes = List.copyOf(attributes);
+        this.dyeable = dyeable;
     }
 
     /**
@@ -328,7 +330,11 @@ public class WarbornArmorItem extends ArmorItem implements GeoItem {
     @Override
     public boolean isDamageable(ItemStack stack) {
         // Check config to determine if armor should be damageable
-        return WarbornConfig.COMMON.armorIsDamageable.get();
+         return WarbornConfig.COMMON.armorIsDamageable.get();
+    }
+
+    public boolean isDyeable() {
+        return dyeable;
     }
 
     // ==================== Skin Variant System ====================

@@ -1,8 +1,14 @@
 package ru.liko.warbornrenewed.registry;
 
-import net.minecraft.core.registries.Registries;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -11,11 +17,6 @@ import ru.liko.warbornrenewed.Warbornrenewed;
 import ru.liko.warbornrenewed.content.item.BinocularItem;
 import ru.liko.warbornrenewed.content.item.RebBackpackItem;
 import ru.liko.warbornrenewed.packs.CustomPackArmorItem;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.function.Supplier;
 
 public final class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(Warbornrenewed.MODID);
@@ -80,6 +81,15 @@ public final class ModItems {
         REB_BACKPACKS.add(REB_BACKPACK_MULTICAM);
         REB_BACKPACKS.add(REB_BACKPACK_WHITE);
     }
+
+    public static final DeferredItem<Item> BALLISTIC_STEEL_REPAIR_PLATE = ITEMS.register("ballistic_steel_repair_plate", properties ->
+            new Item(new Item.Properties().stacksTo(1).rarity(Rarity.COMMON)) {
+                public void appendHoverText(ItemStack stack, Item.TooltipContext context,
+                        List<Component> tooltipComponents) {
+                    tooltipComponents.add(Component.translatable(
+                            "item.warbornrenewed.ballistic_steel_repair_plate.tooltip").withStyle(ChatFormatting.GRAY));
+                }
+            });
 
     private ModItems() {
     }

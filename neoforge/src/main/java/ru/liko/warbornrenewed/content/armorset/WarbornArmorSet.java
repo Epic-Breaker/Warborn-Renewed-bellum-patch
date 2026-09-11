@@ -154,10 +154,17 @@ public final class WarbornArmorSet {
         private final PropertiesProvider propertiesProvider;
         private final List<ArmorAttributeSpec> attributes;
         private final List<String> visionCapabilities;
+        private final boolean dyeable;
 
         ArmorPieceDefinition(String registryName, MaterialProvider materialProvider, ArmorVisualSpec visuals,
                 ArmorBonesSpec bones, PropertiesProvider propertiesProvider, List<ArmorAttributeSpec> attributes,
                 List<String> visionCapabilities) {
+                this(registryName, materialProvider, visuals, bones, propertiesProvider, attributes, visionCapabilities, false);
+            }
+
+            ArmorPieceDefinition(String registryName, MaterialProvider materialProvider, ArmorVisualSpec visuals,
+                ArmorBonesSpec bones, PropertiesProvider propertiesProvider, List<ArmorAttributeSpec> attributes,
+                List<String> visionCapabilities, boolean dyeable) {
             this.registryName = registryName;
             this.materialProvider = materialProvider;
             this.visuals = visuals;
@@ -165,6 +172,7 @@ public final class WarbornArmorSet {
             this.propertiesProvider = propertiesProvider;
             this.attributes = attributes;
             this.visionCapabilities = visionCapabilities;
+            this.dyeable = dyeable;
         }
 
         static ArmorPieceDefinition defaults() {
@@ -224,7 +232,7 @@ public final class WarbornArmorSet {
             String name = registryName();
             WarbornArmorItem item = new WarbornArmorItem(name, materialProvider.material(type), type,
                     propertiesProvider.properties(type), visuals, bones != null ? bones : ArmorBonesSpec.defaults(type),
-                    attributes);
+                    attributes, dyeable);
             // Add vision capabilities for helmets
             if (type == ArmorItem.Type.HELMET) {
                 for (String capability : visionCapabilities) {
@@ -258,6 +266,7 @@ public final class WarbornArmorSet {
         private ArmorBonesSpec bones;
         private ArmorPieceDefinition.PropertiesProvider propertiesProvider;
         private String registryName;
+        private boolean dyeable;
 
         private ArmorPieceBuilder(String setId, ArmorItem.Type type, ArmorPieceDefinition defaults, int sequenceIndex) {
             this.setId = setId;
@@ -271,6 +280,7 @@ public final class WarbornArmorSet {
                 this.registryName = defaults.registryName;
                 this.attributes.addAll(defaults.attributes);
                 this.visionCapabilities.addAll(defaults.visionCapabilities);
+                this.dyeable = defaults.dyeable;
             }
         }
 
@@ -282,6 +292,19 @@ public final class WarbornArmorSet {
         public ArmorPieceBuilder material(ArmorPieceDefinition.MaterialProvider materialProvider) {
             this.materialProvider = materialProvider;
             return this;
+        }
+
+        public ArmorPieceBuilder durability() {
+            return this;
+        }
+
+        public ArmorPieceBuilder dyable(boolean dyeable) {
+            this.dyeable = dyeable;
+            return this;
+        }
+
+        public ArmorPieceBuilder dyeable(boolean dyeable) {
+            return dyable(dyeable);
         }
 
         public ArmorPieceBuilder visuals(Consumer<ArmorVisualSpec.Builder> consumer) {
@@ -355,7 +378,7 @@ public final class WarbornArmorSet {
             ArmorBonesSpec boneSpec = bones != null ? bones : ArmorBonesSpec.defaults(type);
             String registry = registryName != null ? registryName : defaultName();
             return new ArmorPieceDefinition(registry, materialProvider, visuals, boneSpec, properties, attributes,
-                    visionCapabilities);
+                    visionCapabilities, dyeable);
         }
 
         private String defaultName() {
